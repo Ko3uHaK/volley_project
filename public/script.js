@@ -87,7 +87,7 @@ document.addEventListener('DOMContentLoaded', async () => {
   
     players.forEach(player => {
       const listItem = document.createElement('li');
-      listItem.textContent = player.name;
+      listItem.textContent = `${player.name} (Number: ${player.number})`;
       rosterList.appendChild(listItem);
     });
   }
@@ -112,8 +112,8 @@ document.addEventListener('DOMContentLoaded', async () => {
     });
 
     if (response.ok) {
-      // Если данные успешно отправлены на сервер, загружаем информацию о командах и игроках
-      await loadTeamsAndPlayers();
+      // Если данные успешно отправлены на сервер, переходим на вторую страницу
+      window.location.href = '/game.html';
     } else {
       console.error('Error saving game data');
     }

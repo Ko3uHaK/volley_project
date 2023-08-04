@@ -12,9 +12,11 @@ const pool = new Pool({
 });
 
 app.use(express.static(path.join(__dirname, 'public')));
+app.use(express.json()); // Добавляем middleware для обработки данных в формате JSON
+
 app.get('/', (req, res) => {
-    res.sendFile(__dirname + '/public/index.html');
-  });
+  res.sendFile(__dirname + '/public/index.html');
+});
 
 // Обработчик для запросов на получение списка команд
 app.get('/teams', async (req, res) => {
