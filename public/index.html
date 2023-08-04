@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Volleyball Score Tracker</title>
+  <link rel="stylesheet" href="styles.css" />
+</head>
+<body>
+  <div class="container">
+    <h1>Volleyball Score Tracker</h1>
+    <form id="gameForm">
+      <!-- Форма для ввода данных о времени, дате и зале -->
+      <label for="time">Time:</label>
+      <input type="time" id="time" name="time" required />
+
+      <label for="date">Date:</label>
+      <input type="date" id="date" name="date" required />
+
+      <label for="venue">Venue:</label>
+      <select id="venue" name="venue" required>
+        <option value="" disabled selected>Select Venue</option>
+        <option value="Hall 1">Hall 1</option>
+        <option value="Hall 2">Hall 2</option>
+        <option value="Hall 3">Hall 3</option>
+      </select>
+
+      <!-- Выпадающий список для выбора первой команды -->
+      <label for="teamSelect1">Select Team 1:</label>
+      <select id="teamSelect1" name="teamSelect1" required>
+        <option value="" disabled selected>Select Team</option>
+        <!-- Опции команд будут добавляться динамически из базы данных -->
+      </select>
+
+      <!-- Выпадающий список для выбора второй команды -->
+      <label for="teamSelect2">Select Team 2:</label>
+      <select id="teamSelect2" name="teamSelect2" required>
+        <option value="" disabled selected>Select Team</option>
+        <!-- Опции команд будут добавляться динамически из базы данных -->
+      </select>
+
+      <!-- Кнопка для запуска игры -->
+      <button type="submit">Start Game</button>
+    </form>
+    <div class="teams">
+      <!-- Список команд -->
+      <h3>Teams:</h3>
+      <ul id="teamList">
+        <!-- Здесь будут отображаться данные о командах -->
+      </ul>
+
+      <!-- Список игроков команды 1 -->
+      <div class="team-roster">
+        <h3>Team 1 Roster:</h3>
+        <ul id="roster1">
+          <!-- Здесь будут отображаться данные о составе первой команды -->
+        </ul>
+      </div>
+
+      <!-- Список игроков команды 2 -->
+      <div class="team-roster">
+        <h3>Team 2 Roster:</h3>
+        <ul id="roster2">
+          <!-- Здесь будут отображаться данные о составе второй команды -->
+        </ul>
+      </div>
+    </div>
+  </div>
+  <script src="script.js"></script>
+</body>
+</html>
